@@ -7,8 +7,17 @@ body {
 .grid.container {
   display: flex;
   flex: 1;
+  flex-flow: column wrap;
+}
+
+.grid.row {
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .grid.box {
   flex: 1;
+  width: 25px;
+  height: 25px;
+  background: #f4f4f4;
 }
