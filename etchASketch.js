@@ -10,6 +10,21 @@ const gridContainer = document.querySelector('.grid.container');
 // Nested for loops to add gridBox elements to gridContainer
 // for i < 16 { for i < 16 { add box }}
 
+drawGrid();
+
+// Select all gridBox elements
+const gridBoxes = document.querySelectorAll('div.grid.box');
+
+gridBoxes.forEach((box) => {
+  box.addEventListener('mouseover', addColorClass);
+});
+
+// Add a class to the gridBox that will change the background color in the stylesheet
+function addColorClass(e) {
+  e.target.classList.add('colored');
+  console.log(e);
+}
+
 function drawGrid() {
   for (let row = 0; row < 16; row++) {
 
@@ -27,5 +42,3 @@ function drawGrid() {
 
   }
 }
-
-drawGrid();
