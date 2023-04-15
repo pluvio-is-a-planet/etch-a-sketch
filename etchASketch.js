@@ -1,7 +1,7 @@
 // Create gridBox element as div
 const gridBox = document.createElement('div');
-const rowPx= 16;
-const colPx = 16;
+let rowPx= 16;
+let colPx = 16;
 
 gridBox.className = 'grid box';
 
@@ -13,12 +13,23 @@ const gridContainer = document.querySelector('.grid.container');
 // for i < 16 { for i < 16 { add box }}
 
 drawGrid();
+selectGridBoxes();
 
 // Select all gridBox elements
-const gridBoxes = document.querySelectorAll('div.grid.box');
+function selectGridBoxes() {
 
-gridBoxes.forEach((box) => {
-  box.addEventListener('mouseover', addColorClass);
+  const gridBoxes = document.querySelectorAll('div.grid.box');
+
+  gridBoxes.forEach((box) => {
+    box.addEventListener('mouseover', addColorClass);
+  });   
+
+}
+
+const changeResBtn = document.querySelector('button#btn.change-res');
+changeResBtn.addEventListener('click', () => {
+  changeResolution();
+  console.log(`${rowPx}, ${colPx}`)
 });
 
 // Add a class to the gridBox that will change the background color in the stylesheet
@@ -42,4 +53,36 @@ function drawGrid() {
   gridContainer.appendChild(gridRow.cloneNode(true));
 
   }
+}
+
+function changeResolution() {
+
+  let promptWidth = parseInt(prompt('Enter width (in pixels),\nminimum: 1,\nmaximum: 100'));
+  if (promptWidth < 1) {
+    promptWidth = 1;
+  } else if (promptWidth > 100) {
+    promptWidth = 100;
+  }
+
+  alert(`Width set to ${promptWidth} pixel(s)`);
+
+  let promptHeight = parseInt(prompt('Enter height (in pixels),\nminimum: 1,\nmaximum: 100'));
+  if (promptHeight < 1) {
+    promptHeight = 1;
+  } else if (promptHeight > 100) {
+    promptHeight = 100;
+  }
+
+  alert(`Height set to ${promptHeight} pixel(s)`);
+
+  for (let rowCounter = 0; rowCounter < rowPx; rowCounter++) {
+    let gridRowSelector = document.querySelector('div.grid.row');
+    gridContainer.removeChild(gridRowSelector);
+  }
+
+  rowPx = promptWidth;
+  colPx = promptHeight;
+
+  drawGrid();
+  selectGridBoxes();
 }
