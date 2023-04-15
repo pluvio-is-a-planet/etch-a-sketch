@@ -37,8 +37,12 @@ function drawColor(e) {
   targetBox = e.target;
 
   if (targetBox.classList.contains('colored')) {
+    
     if (targetBox.style.opacity > 0) {
       targetBox.style.opacity -= 0.1;
+    } else {
+      targetBox.style.opacity = 1;
+      targetBox.classList.remove('colored');
     }
   
   } else {
