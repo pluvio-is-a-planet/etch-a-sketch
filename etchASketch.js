@@ -27,10 +27,13 @@ function selectGridBoxes() {
 
 }
 
-const changeResBtn = document.querySelector('button#btn.change-res');
-changeResBtn.addEventListener('click', () => {
-  changeResolution();
-});
+// const changeResBtn = document.querySelector('button#btn.change-res');
+// changeResBtn.addEventListener('click', () => {
+//   changeResolution();
+// });
+
+const gridResolutionSlider = document.querySelector('#res-range.range.slider');
+gridResolutionSlider.addEventListener('change', changeResolution);
 
 // Add a class to the gridBox that will change the background color in the stylesheet
 function drawColor(e) {
