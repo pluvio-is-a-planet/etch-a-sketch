@@ -21,7 +21,7 @@ function selectGridBoxes() {
   const gridBoxes = document.querySelectorAll('div.grid.box');
 
   gridBoxes.forEach((box) => {
-    box.addEventListener('mouseover', addColorClass);
+    box.addEventListener('mouseover', drawColor);
   });   
 
 }
@@ -29,12 +29,19 @@ function selectGridBoxes() {
 const changeResBtn = document.querySelector('button#btn.change-res');
 changeResBtn.addEventListener('click', () => {
   changeResolution();
-  console.log(`${rowPx}, ${colPx}`)
 });
 
 // Add a class to the gridBox that will change the background color in the stylesheet
-function addColorClass(e) {
+function drawColor(e) {
   e.target.classList.add('colored');
+
+  randomRed = Math.floor(Math.random() * 255);
+  randomGreen = Math.floor(Math.random() * 255);
+  randomBlue = Math.floor(Math.random() * 255);
+
+  newOpacity = e.target.style.opacity;
+
+  e.target.style.background = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
 }
 
 function drawGrid() {
