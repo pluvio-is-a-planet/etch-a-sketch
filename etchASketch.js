@@ -1,5 +1,7 @@
 // Create gridBox element as div
 const gridBox = document.createElement('div');
+const rowPx= 16;
+const colPx = 16;
 
 gridBox.className = 'grid box';
 
@@ -25,12 +27,12 @@ function addColorClass(e) {
 }
 
 function drawGrid() {
-  for (let row = 0; row < 16; row++) {
+  for (let row = 0; row < rowPx; row++) {
 
   const gridRow = document.createElement('div');
   gridRow.className = 'grid row';
 
-  for (let col = 0; col < 16; col++) {
+  for (let col = 0; col < colPx; col++) {
 
     gridRow.id = `row-${row + 1}`;
     gridRow.appendChild(gridBox.cloneNode(true));
