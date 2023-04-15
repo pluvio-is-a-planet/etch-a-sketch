@@ -1,21 +1,14 @@
-// Create gridBox element as div
 const gridBox = document.createElement('div');
 let rowPx= 16;
 let colPx = 16;
 
 gridBox.className = 'grid box';
 
-// Create a 16x16 grid by adding gridBox elements to the .grid.container class
-// Assign .grid.container class to a const
 const gridContainer = document.querySelector('.grid.container');
-
-// Nested for loops to add gridBox elements to gridContainer
-// for i < 16 { for i < 16 { add box }}
 
 drawGrid();
 selectGridBoxes();
 
-// Select all gridBox elements
 function selectGridBoxes() {
 
   const gridBoxes = document.querySelectorAll('div.grid.box');
@@ -27,16 +20,10 @@ function selectGridBoxes() {
 
 }
 
-// const changeResBtn = document.querySelector('button#btn.change-res');
-// changeResBtn.addEventListener('click', () => {
-//   changeResolution();
-// });
-
 const gridResolutionSlider = document.querySelector('#res-range.range.slider');
 gridResolutionSlider.addEventListener('change', changeResolution);
 gridResolutionSlider.addEventListener('input', updateResDisplay);
 
-// Add a class to the gridBox that will change the background color in the stylesheet
 function drawColor(e) {
   targetBox = e.target;
 
