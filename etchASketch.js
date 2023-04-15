@@ -34,6 +34,7 @@ function selectGridBoxes() {
 
 const gridResolutionSlider = document.querySelector('#res-range.range.slider');
 gridResolutionSlider.addEventListener('change', changeResolution);
+gridResolutionSlider.addEventListener('input', updateResDisplay);
 
 // Add a class to the gridBox that will change the background color in the stylesheet
 function drawColor(e) {
@@ -92,4 +93,11 @@ function changeResolution() {
 
   drawGrid();
   selectGridBoxes();
+}
+
+function updateResDisplay() {
+
+  const resDisplay = document.querySelector('.range.output');
+  resDisplay.textContent = `${gridResolutionSlider.value}x${gridResolutionSlider.value}`
+
 }
