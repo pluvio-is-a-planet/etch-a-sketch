@@ -39,8 +39,6 @@ function drawColor(e) {
   randomGreen = Math.floor(Math.random() * 255);
   randomBlue = Math.floor(Math.random() * 255);
 
-  newOpacity = e.target.style.opacity;
-
   e.target.style.background = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
 }
 
