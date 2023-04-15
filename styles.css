@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  background-color: #000004;
+  display: flex;
+}
+
+.grid.container {
+  display: flex;
+  flex: 1;
+}
+
+.grid.box {
+  flex: 1;
+}
