@@ -22,7 +22,6 @@ gridBoxes.forEach((box) => {
 // Add a class to the gridBox that will change the background color in the stylesheet
 function addColorClass(e) {
   e.target.classList.add('colored');
-  console.log(e);
 }
 
 function drawGrid() {
