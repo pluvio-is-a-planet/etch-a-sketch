@@ -81,31 +81,14 @@ function drawGrid() {
 
 function changeResolution() {
 
-  let promptWidth = parseInt(prompt('Enter width (in pixels),\nminimum: 1,\nmaximum: 100'));
-  if (promptWidth < 1) {
-    promptWidth = 1;
-  } else if (promptWidth > 100) {
-    promptWidth = 100;
-  }
-
-  alert(`Width set to ${promptWidth} pixel(s)`);
-
-  let promptHeight = parseInt(prompt('Enter height (in pixels),\nminimum: 1,\nmaximum: 100'));
-  if (promptHeight < 1) {
-    promptHeight = 1;
-  } else if (promptHeight > 100) {
-    promptHeight = 100;
-  }
-
-  alert(`Height set to ${promptHeight} pixel(s)`);
-
   for (let rowCounter = 0; rowCounter < rowPx; rowCounter++) {
     let gridRowSelector = document.querySelector('div.grid.row');
     gridContainer.removeChild(gridRowSelector);
   }
 
-  rowPx = promptWidth;
-  colPx = promptHeight;
+  let sliderValue = gridResolutionSlider.value;
+  rowPx = sliderValue;
+  colPx = sliderValue;
 
   drawGrid();
   selectGridBoxes();
