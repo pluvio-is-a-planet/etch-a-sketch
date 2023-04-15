@@ -1,23 +1,31 @@
-body {
+html, body {
   margin: 0;
   background-color: #000004;
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid.container {
   display: flex;
-  flex: 1;
+  flex: 0 1 auto;
+  width: 75vh;
+  height: 75vh;
   flex-flow: column wrap;
+  justify-content: center;
 }
 
 .grid.row {
   display: flex;
+  flex: 1 1 auto;
   flex-flow: row nowrap;
+  justify-content: center;
 }
 
 .grid.box {
-  flex: 1;
-  width: 25px;
-  height: 25px;
-  background: #f4f4f4;
+  flex: 1 1 25px;
+  background: rgba(255, 255, 255, 5%);
+  height: 100%;
 }
