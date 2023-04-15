@@ -45,8 +45,12 @@ function drawColor(e) {
     if (targetBox.style.opacity > 0) {
       targetBox.style.opacity -= 0.1;
     } else {
-      targetBox.style.opacity = 1;
-      targetBox.classList.remove('colored');
+
+      setTimeout(() => {
+        targetBox.style.opacity = 1;
+        targetBox.classList.remove('colored');
+      }, 2000);
+      
     }
   
   } else {
