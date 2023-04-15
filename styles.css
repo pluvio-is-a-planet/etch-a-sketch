@@ -14,7 +14,7 @@ body {
 }
 
 .btn.container {
-  width: 75vh;
+  width: 90vh;
   display: flex;
   justify-content: flex-end;
 }
@@ -29,8 +29,8 @@ body {
 .grid.container {
   display: flex;
   flex: 0 1 auto;
-  width: 75vh;
-  height: 75vh;
+  width: 90vh;
+  height: 90vh;
   flex-flow: column wrap;
   justify-content: center;
 }
